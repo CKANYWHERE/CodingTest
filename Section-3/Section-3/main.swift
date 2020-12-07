@@ -7,5 +7,8 @@
 
 import Foundation
 
-print("Hello, World!")
 
+let cube = LubicsCube()
+var data = cube.loadData()
+
+cube.printCube(cube: data)

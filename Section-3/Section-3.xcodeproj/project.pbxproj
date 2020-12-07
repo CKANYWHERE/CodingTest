@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD1B6B57257E0B840038F93C /* LubicsCube.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1B6B56257E0B840038F93C /* LubicsCube.swift */; };
 		FD7D295B257DC52D0033A925 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7D295A257DC52D0033A925 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FD1B6B56257E0B840038F93C /* LubicsCube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LubicsCube.swift; sourceTree = "<group>"; };
 		FD7D2957257DC52D0033A925 /* Section-3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Section-3"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD7D295A257DC52D0033A925 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				FD7D295A257DC52D0033A925 /* main.swift */,
+				FD1B6B56257E0B840038F93C /* LubicsCube.swift */,
 			);
 			path = "Section-3";
 			sourceTree = "<group>";
@@ -119,6 +122,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD1B6B57257E0B840038F93C /* LubicsCube.swift in Sources */,
 				FD7D295B257DC52D0033A925 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
