@@ -7,5 +7,14 @@
 
 import Foundation
 
-print("Hello, World!")
+var cube =
+[
+    ["R","R","W"],
+    ["G","C","W"],
+    ["G","B","B"]
+]
+
+print(cube)
+
+
 
