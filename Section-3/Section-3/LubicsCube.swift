@@ -10,7 +10,7 @@ class LubicsCube{
     
     func loadData() ->[[[String]]]{
         let cube:[[[String]]] = [
-            
+            // 1분면
             [
              ["B"],["B"],["B"]
             ],
@@ -20,7 +20,7 @@ class LubicsCube{
             [
              ["B"],["B"],["B"]
             ],
-            
+            //2분면
             [
              ["W"],["W"],["W"]
             ],
@@ -30,7 +30,7 @@ class LubicsCube{
             [
              ["W"],["W"],["W"]
             ],
-            
+            //3분면
             [
              ["O"],["O"],["O"]
             ],
@@ -40,7 +40,7 @@ class LubicsCube{
             [
              ["O"],["O"],["O"]
             ],
-            
+            //4분면
             [
              ["G"],["G"],["G"]
             ],
@@ -50,8 +50,7 @@ class LubicsCube{
             [
              ["G"],["G"],["G"]
             ],
-            
-            
+            //5분면
             [
              ["Y"],["Y"],["Y"]
             ],
@@ -61,8 +60,7 @@ class LubicsCube{
             [
              ["Y"],["Y"],["Y"]
             ],
-            
-            
+            //6분면
             [
              ["R"],["R"],["R"]
             ],
@@ -74,6 +72,11 @@ class LubicsCube{
             ],
         ]
         return cube
+    }
+    
+    //윗면회전
+    func U(cube:[[[String]]]){
+        let temp = data
     }
     
     func printCube(cube:[[[String]]]){

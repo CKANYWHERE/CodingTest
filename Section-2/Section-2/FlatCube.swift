@@ -20,6 +20,7 @@ class FlatCube{
         return cube
     }
     
+    //U  가장 윗줄을 왼쪽으로 한 칸 밀기
     func U(cube:[[String]]) -> [[String]]{
         let first = cube[0][0]
         let second = cube[0][1]
@@ -32,6 +33,7 @@ class FlatCube{
         
     }
 
+    //U' 가장 윗줄을 오른쪽으로 한 칸 밀기
     func Uquote(cube:[[String]]) -> [[String]]{
         let first = cube[0][0]
         let second = cube[0][1]
@@ -43,6 +45,7 @@ class FlatCube{
         ]
     }
 
+    //R 가장 오른쪽 줄을 위로 한 칸 밀기
     func R(cube:[[String]]) -> [[String]]{
         let first = cube[0][2]
         let second = cube[1][2]
@@ -55,7 +58,8 @@ class FlatCube{
         ]
         
     }
-
+    
+    //R' 가장 오른쪽 줄을 아래로 한 칸 밀기
     func Rquote(cube:[[String]]) -> [[String]]{
         let first = cube[0][2]
         let second = cube[1][2]
@@ -68,6 +72,7 @@ class FlatCube{
         ]
     }
 
+    //L  가장 왼쪽 줄을 아래로 한 칸 밀기
     func L(cube:[[String]]) -> [[String]]{
         let first = cube[0][0]
         let second = cube[1][0]
@@ -79,7 +84,7 @@ class FlatCube{
             ,[second,cube[2][1],cube[2][2]]
         ]
     }
-
+    //L' 가장 왼쪽 줄을 위로 한 칸 밀기
     func Lquote(cube:[[String]]) -> [[String]]{
         let first = cube[0][0]
         let second = cube[1][0]
@@ -92,6 +97,7 @@ class FlatCube{
          ]
     }
 
+    //B  가장 아랫줄을 오른쪽으로 한 칸 밀기
     func B(cube:[[String]])-> [[String]]{
         let first = cube[2][0]
         let second = cube[2][1]
@@ -103,6 +109,7 @@ class FlatCube{
         ]
     }
 
+    //B' 가장 아랫줄을 왼쪽으로 한 칸 밀기
     func Bquote(cube:[[String]]) -> [[String]]{
         let first = cube[2][0]
         let second = cube[2][1]
