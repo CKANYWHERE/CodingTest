@@ -53,6 +53,14 @@ while(cmd != "Q"){
             print("L'")
             cube.Lquote()
         }
+        else if $0 == "F"{
+            print("F")
+            cube.F()
+        }
+        else if $0 == "F'"{
+            print("F'")
+            cube.Fquote()
+        }
         
         cube.printCube(cube: data)
     }
