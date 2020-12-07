@@ -15,14 +15,10 @@ let cube = LubicsCube()
         BBB
         BBB
 
- WWW    OOO     GGG
- WWW    OOO     GGG
- WWW    OOO     GGG     => 순서대로 2,3,4분면
+ WWW    OOO     GGG     YYY
+ WWW    OOO     GGG     YYY
+ WWW    OOO     GGG     YYY => 순서대로 2,3,4,5분면
             
-        YYY
-        YYY
-        YYY =>  5분면
- 
         RRR
         RRR
         RRR => 6분면
@@ -47,7 +43,15 @@ while(cmd != "Q"){
         }
         else if $0 == "U'"{
             print("U'")
-            cube.Uqoute()
+            cube.Uquote()
+        }
+        else if $0 == "L"{
+            print("L")
+            cube.L()
+        }
+        else if $0 == "L'"{
+            print("L'")
+            cube.Lquote()
         }
         
         cube.printCube(cube: data)

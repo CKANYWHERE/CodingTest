@@ -85,7 +85,7 @@ class LubicsCube{
     }
     
     //윗면반시계 반향
-    func Uqoute(){
+    func Uquote(){
         let temp = data[12]
         data[12] = data[9]
         data[9] = data[6]
@@ -93,17 +93,68 @@ class LubicsCube{
         data[3] = temp
     }
     
+    //왼쪽면 시계 방향
     func L(){
+        let temp = [data[12][0],data[13][0],data[14][0]]
         
+        //5분면 변경
+        data[12][0] = data[15][0]
+        data[13][0] = data[16][0]
+        data[14][0] = data[17][0]
+        
+        //6분면 변경
+        data[15][0] = data[6][0]
+        data[16][0] = data[7][0]
+        data[17][0] = data[8][0]
+        
+        //3분면 변경
+        data[6][0] = data[0][0]
+        data[7][0] = data[1][0]
+        data[8][0] = data[2][0]
+        
+        //1분면 변경
+        data[0][0] = temp[0]
+        data[1][0] = temp[1]
+        data[2][0] = temp[2]
+    }
+    
+    //왼쪽면 반시계 방향
+    func Lquote(){
+        let temp = [data[0][0],data[1][0],data[2][0]]
+        
+        //1분면 변경
+        data[0][0] = data[6][0]
+        data[1][0] = data[7][0]
+        data[2][0] = data[8][0]
+        
+        //3분면 변경
+        data[6][0] = data[15][0]
+        data[7][0] = data[16][0]
+        data[8][0] = data[17][0]
+        
+        //6분면 변경
+        data[15][0] = data[12][0]
+        data[16][0] = data[13][0]
+        data[17][0] = data[14][0]
+        
+        //5분면 변경
+        data[12][0] = temp[0]
+        data[13][0] = temp[1]
+        data[14][0] = temp[2]
     }
     
     func printCube(cube:[[[String]]]){
         for i in 0...cube.count - 1{
-            if i % 3 == 0{
-                print("\(i/3 + 1) " + "분면")
+            if i < 3{
+                print("\t\t\t\t\t\t\t\t",cube[i])
+            }else if i >= 3 && i < 6{
+                print(cube[i], cube[i+3], cube[i+6],cube[i+9])
+            }else if i >= 15 && i < 18{
+                print("\t\t\t\t\t\t\t\t",cube[i])
             }
-            print(cube[i]) 
-        }
+ 
+           
+        }  
     }
     
     //MARK: 커맨드 라인 입력한 부분 파싱하기
