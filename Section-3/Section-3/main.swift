@@ -15,10 +15,14 @@ let cube = LubicsCube()
         BBB
         BBB
 
- WWW    OOO     GGG     YYY
- WWW    OOO     GGG     YYY
- WWW    OOO     GGG     YYY => 순서대로 2,3,4,5분면
+ WWW    OOO     GGG
+ WWW    OOO     GGG
+ WWW    OOO     GGG     => 순서대로 2,3,4분면
             
+        YYY
+        YYY
+        YYY =>  5분면
+ 
         RRR
         RRR
         RRR => 6분면
@@ -36,7 +40,21 @@ while(cmd != "Q"){
     let cmds = cube.parseCmd(cmd: cmd)
     controlCnt = controlCnt + cmds.count
    
+    cmds.forEach{
+        if $0 == "U"{
+            print("U")
+            cube.U()
+        }
+        else if $0 == "U'"{
+            print("U'")
+            cube.Uqoute()
+        }
+        
+        cube.printCube(cube: data)
+    }
+    
 }
 
+
 print("조작겟수:" + "\(controlCnt - 1)")
-print("이용햐주셔서 감사합니다 뚜뚜뚜")
+print("이용햐주셔서 감사합니다. 뚜뚜뚜.")

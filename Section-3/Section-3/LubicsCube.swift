@@ -75,8 +75,26 @@ class LubicsCube{
     }
     
     //윗면회전
-    func U(cube:[[[String]]]){
-        let temp = data
+    func U(){
+        let temp = data[3]
+        data[3] = data[6]
+        data[6] = data[9]
+        data[9] = data[12]
+        data[12] = temp
+        //print(temp)
+    }
+    
+    //윗면반시계 반향
+    func Uqoute(){
+        let temp = data[12]
+        data[12] = data[9]
+        data[9] = data[6]
+        data[6] = data[3]
+        data[3] = temp
+    }
+    
+    func L(){
+        
     }
     
     func printCube(cube:[[[String]]]){
@@ -84,7 +102,7 @@ class LubicsCube{
             if i % 3 == 0{
                 print("\(i/3 + 1) " + "분면")
             }
-            print(cube[i])
+            print(cube[i]) 
         }
     }
     
