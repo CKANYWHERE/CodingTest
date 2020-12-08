@@ -29,6 +29,7 @@ cube.printCube(cube: data)
 
 var cmd = ""
 var controlCnt = 0
+var start = CFAbsoluteTimeGetCurrent()
 while(cmd != "Q"){
     print("Cube>")
     cmd = readLine()!
@@ -90,7 +91,10 @@ while(cmd != "Q"){
     }
     
 }
+var end = CFAbsoluteTimeGetCurrent()
 
+var playTime = cube.calcPlayTime(time:end-start)
 
-print("조작겟수:" + "\(controlCnt - 1)")
+print(playTime)
+print("조작겟수: " + "\(controlCnt - 1)")
 print("이용햐주셔서 감사합니다. 뚜뚜뚜.")

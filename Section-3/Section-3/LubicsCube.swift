@@ -373,6 +373,27 @@ class LubicsCube{
         }
         return cmds
     }
+    
+    func calcPlayTime(time:CFAbsoluteTime) -> String{
+        let minute = Int(time/60)
+        let second = Int(time)%60
+        
+        var playTime = "경과시간: "
+        if minute >= 10 && second >= 10{
+            playTime = playTime + "\(minute):"+"\(second)"
+        }
+        else if minute >= 10 && second < 10{
+            playTime = playTime + "\(minute):"+"0\(second)"
+        }
+        else if minute < 10 && second >= 10{
+            playTime = playTime + "0\(minute):"+"\(second)"
+        }
+        else{
+            playTime = playTime + "0\(minute):"+"0\(second)"
+        }
+
+        return playTime
+    }
 }
 
 
