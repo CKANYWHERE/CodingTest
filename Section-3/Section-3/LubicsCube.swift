@@ -74,6 +74,22 @@ class LubicsCube{
         return cube
     }
     
+    //Mark: 큐브 무작위로 썪기
+    func shuffleCube(){
+        for i in 0...data.count-1{
+            for j in 0...data[i].count-1{
+                for k in 0...data[i][j].count-1{
+                    data[i][j][k] = randomString()
+                }
+            }
+        }
+    }
+    
+    func randomString() -> String{
+        let letters = "BWOGYR"
+        return String(letters.randomElement()!)
+    }
+    
     //윗면회전
     func U(){
         let temp = data[3]
@@ -331,6 +347,7 @@ class LubicsCube{
         data[5] = temp
     }
     
+    //큐브 출력
     func printCube(cube:[[[String]]]){
         for i in 0...cube.count - 1{
             if i < 3{
@@ -374,6 +391,7 @@ class LubicsCube{
         return cmds
     }
     
+    //플레이타임 측정
     func calcPlayTime(time:CFAbsoluteTime) -> String{
         let minute = Int(time/60)
         let second = Int(time)%60

@@ -25,7 +25,9 @@ let cube = LubicsCube()
  */
 var data = cube.loadData()
 
+cube.shuffleCube()
 cube.printCube(cube: data)
+
 
 var cmd = ""
 var controlCnt = 0
