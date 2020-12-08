@@ -78,9 +78,7 @@ class LubicsCube{
     func shuffleCube(){
         for i in 0...data.count-1{
             for j in 0...data[i].count-1{
-                for k in 0...data[i][j].count-1{
-                    data[i][j][k] = randomString()
-                }
+                data[i][j][0] = randomString()
             }
         }
     }
@@ -88,6 +86,36 @@ class LubicsCube{
     func randomString() -> String{
         let letters = "BWOGYR"
         return String(letters.randomElement()!)
+    }
+    
+    func checkComplete() -> Bool{
+        //1분면 첫번째 값
+        let one = data[0][0][0]
+        //2분면 첫번째 값
+        let two = data[3][0][0]
+        //3분면 첫번째 값
+        let three = data[6][0][0]
+        //4분면 첫번째 값
+        let four = data[9][0][0]
+        //5분면 첫번째 값
+        let five = data[12][0][0]
+        //6분면 첫번째 값
+        let six = data[15][0][0]
+        
+        var isGood = true
+        
+        for i in 0...data.count - 1{
+            for j in 0...data[i].count - 1{
+                if !isGood {return false}
+                if (i < 3 && one != data[i][j][0]){isGood = false}
+                if (i >= 3 && i < 6)  && two != data[i][j][0] && isGood {isGood = false}
+                if (i >= 6 && i < 9)  && three != data[i][j][0] && isGood {isGood = false}
+                if (i >= 9 && i < 12)  && four != data[i][j][0] && isGood {isGood = false}
+                if (i >= 12 && i < 15)  && five != data[i][j][0] && isGood {isGood = false}
+                if (i >= 15 && i < 18)  && six != data[i][j][0] && isGood {isGood = false}
+            }
+        }
+        return isGood
     }
     
     //윗면회전

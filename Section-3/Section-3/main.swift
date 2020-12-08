@@ -25,14 +25,16 @@ let cube = LubicsCube()
  */
 var data = cube.loadData()
 
-cube.shuffleCube()
+//cube.shuffleCube()
 cube.printCube(cube: data)
 
 
 var cmd = ""
 var controlCnt = 0
 var start = CFAbsoluteTimeGetCurrent()
-while(cmd != "Q"){
+var isGood = true
+
+while(cmd != "Q" || isGood == false){
     print("Cube>")
     cmd = readLine()!
     
@@ -88,11 +90,15 @@ while(cmd != "Q"){
             print("D'")
             cube.Dquoute()
         }
-        
         cube.printCube(cube: data)
     }
     
+    if cube.checkComplete() == true{
+        print("큐브를 완성했군요! 축하합니다! ")
+        break
+    }
 }
+
 var end = CFAbsoluteTimeGetCurrent()
 
 var playTime = cube.calcPlayTime(time:end-start)
