@@ -77,9 +77,14 @@ class LubicsCube{
     //윗면회전
     func U(){
         let temp = data[3]
+        
+        //2분면 회전
         data[3] = data[6]
+        //3분면 회전
         data[6] = data[9]
+        //4분면 회전
         data[9] = data[12]
+        //5분면 회전
         data[12] = temp
         //print(temp)
     }
@@ -87,9 +92,13 @@ class LubicsCube{
     //윗면반시계 반향
     func Uquote(){
         let temp = data[12]
+        //5분면 회전
         data[12] = data[9]
+        //4분면 회전
         data[9] = data[6]
+        //3분면 회전
         data[6] = data[3]
+        //2분면 회전
         data[3] = temp
     }
     
@@ -189,6 +198,137 @@ class LubicsCube{
         data[3][2] = temp[2]
         data[4][2] = temp[1]
         data[5][2] = temp[0]
+    }
+    
+    func R(){
+        let temp = [data[0][2],data[1][2],data[2][2]]
+        
+        //1분면 회전
+        data[0][2] = data[6][2]
+        data[1][2] = data[7][2]
+        data[2][2] = data[8][2]
+        
+        //3분면 회전
+        data[6][2] = data[15][2]
+        data[7][2] = data[16][2]
+        data[8][2] = data[17][2]
+        
+        //6분면 회전
+        data[15][2] = data[12][2]
+        data[16][2] = data[13][2]
+        data[17][2] = data[14][2]
+        
+        //5분면 회전
+        data[12][2] = temp[0]
+        data[13][2] = temp[1]
+        data[14][2] = temp[2]
+        
+    }
+    
+    func Rquote(){
+        let temp = [data[12][2],data[13][2],data[14][2]]
+        
+        //5분면 회전
+        data[12][2] = data[15][2]
+        data[13][2] = data[16][2]
+        data[14][2] = data[17][2]
+        
+        //6분면 회전
+        data[15][2] = data[6][2]
+        data[16][2] = data[7][2]
+        data[17][2] = data[8][2]
+        
+        //3분면 회전
+        data[6][2] = data[0][2]
+        data[7][2] = data[1][2]
+        data[8][2] = data[2][2]
+        
+        //1분면 회전
+        data[0][2] = temp[0]
+        data[1][2] = temp[1]
+        data[2][2] = temp[2]
+        
+    }
+    
+    func B(){
+        let temp = data[0]
+        
+        //1분면 회전
+        data[0][0] = data[9][2]
+        data[0][1] = data[10][2]
+        data[0][2] = data[11][2]
+        
+        //4분면 회전
+        data[9][2] = data[17][2]
+        data[10][2] = data[17][1]
+        data[11][2] = data[17][0]
+        
+        //6분면 회전
+        data[17][0] = data[3][0]
+        data[17][1] = data[4][0]
+        data[17][2] = data[5][0]
+        
+        //2분면 회전
+        data[3][0] = temp[2]
+        data[4][0] = temp[1]
+        data[5][0] = temp[0]
+    }
+    
+    func Bquote(){
+        let temp = data[0]
+        
+        //1분면 회전
+        data[0][0] = data[5][0]
+        data[0][1] = data[4][0]
+        data[0][2] = data[3][0]
+        
+        //2분면 회전
+        data[3][0] = data[17][0]
+        data[4][0] = data[17][1]
+        data[5][0] = data[17][2]
+        
+        //6분면 회전
+        data[17][0] = data[11][2]
+        data[17][1] = data[10][2]
+        data[17][2] = data[9][2]
+        
+        //3분면 회전
+        data[9][2] = temp[0]
+        data[10][2] = temp[1]
+        data[11][2] = temp[2]
+    }
+    
+    func D(){
+        let temp = data[8]
+        
+        //3분면 회전
+        data[8] = data[5]
+        
+        //2분면 회전
+        data[5] = data[14]
+        
+        //5분면 회전
+        data[14] = data[11]
+        
+        //4분면 회전
+        data[11] = temp
+        
+    }
+    
+    func Dquoute(){
+        let temp = data[8]
+        
+        //3분면 회전
+        data[8] = data[11]
+        
+        //4분면 회전
+        data[11] = data[14]
+        
+        //5분면 회전
+        data[14] = data[5]
+        
+        //2분면 회전
+        data[5] = temp
     }
     
     func printCube(cube:[[[String]]]){
